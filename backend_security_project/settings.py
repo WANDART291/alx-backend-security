@@ -1,13 +1,13 @@
+import os
 from pathlib import Path
 from datetime import timedelta # <-- FIX: timedelta must be imported here
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Quick-start development settings - unsuitable for production
-SECRET_KEY = 'django-insecure-^qlqv@lytcvfs=@vd)r5eai6be6db$orif9zvpbqutw#bqe!=w'
-DEBUG = True
-ALLOWED_HOSTS = []
+
+SECRET_KEY = os.environ.get('SECRET_KEY', 'default-insecure-key')
+DEBUG = os.environ.get('DEBUG') == 'True'
+ALLOWED_HOSTS = ['WANDI.pythonanywhere.com']
 
 # Application definition
 INSTALLED_APPS = [
