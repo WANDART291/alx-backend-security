@@ -4,6 +4,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    # Map the URL
-    path('access/', views.sensitive_access_view, name='sensitive_access'),
+    # This points to the rate-limited view from Task 3
+    path('access/', views.sensitive_access_view, name='sensitive_access'), 
 ]
